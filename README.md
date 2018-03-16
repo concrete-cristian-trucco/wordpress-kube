@@ -1,5 +1,6 @@
 # wordpress-kube
-exemplo de aplicação wordpress com mysql
+
+Exemplo de aplicação wordpress com mysql no cluster Kubernetes.
 
 ##### Exemplo Wordpress
 
