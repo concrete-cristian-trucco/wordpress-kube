@@ -81,4 +81,4 @@ spec:
           serviceName: ingress-example-joomla
           servicePort: 80
 ```
-˜
+
