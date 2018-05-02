@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     ingress.kubernetes.io/rewrite-target: /
-    ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
   name: my-wordpress-ingress
 spec:
   tls:

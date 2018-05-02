@@ -24,4 +24,9 @@ kubectl create secret generic mysql-pass --from-literal=password="value=$YOUR_PA
 kubectl create -f deploy-wordpress-mysql.yaml
 
 echo "verificando serviços"
-kubectl get svc,pods,deploy
+kubectl get svc,pods,deploy,pvc,pv,secrets
+
+echo 
+echo "kubectl get svc,pods,deploy,pvc,pv,secrets"
+
+echo "fim da implantacao"

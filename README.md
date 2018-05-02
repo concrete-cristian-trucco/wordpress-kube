@@ -49,5 +49,35 @@ Pegar o Serviço pelo Minikube:
     minikube service wordpress --url
 
 
+### Criar Ingress para host: https://wordpresstrucco.com/
 
+### Gerar os certificados.
 
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=wordpresstrucco.com"
+### Antes de criar o Ingress criar os secrets para o certificados.
+    kubectl create secret tls secret-wordpress --key tls.key --cert tls.crt	
+
+### Criar o Ingress
+
+***
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/ssl-redirect: "false"
+  name: my-service-ingress
+spec:
+  tls:
+  - hosts:
+    - trucco.com
+    secretName: my-secret
+  rules:
+  - host: trucco.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ingress-example-joomla
+          servicePort: 80
+***
