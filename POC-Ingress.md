@@ -39,7 +39,7 @@
   	kubectl apply -f wordpress-ingress.yaml
 
 
-```
+```console
 
  apiVersion: extensions/v1beta1
 kind: Ingress
@@ -69,7 +69,9 @@ spec:
 ```
 kubectl get ing
 ```
-```console
+##### Saida do comando.
+
+```
 NAME                   HOSTS                 ADDRESS          PORTS     AGE
 my-wordpress-ingress   wordpresstrucco.com   192.168.99.100   80, 443   53m
 
