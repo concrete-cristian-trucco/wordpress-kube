@@ -59,7 +59,7 @@ Pegar o Serviço pelo Minikube:
 
 ### Criar o Ingress
 
-***
+```
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -79,5 +79,6 @@ spec:
       - path: /
         backend:
           serviceName: ingress-example-joomla
-          servicePort: 80
-***
+          servicePort: 80
+```
+˜
